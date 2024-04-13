@@ -29,7 +29,7 @@ export async function POST(request:NextRequest){
        console.log("saved user:", savedUser)
 
        //send verification mail
-        await sendemail({email, emailtype:'verify', userId:savedUser._id})
+        // await sendemail({email, emailtype:'verify', userId:savedUser._id})
 
         return NextResponse
         .json({
@@ -41,6 +41,6 @@ export async function POST(request:NextRequest){
             {status:201})
 
     } catch (error:any) {
-        return NextResponse.json({message:error.message}, {status:500})      
+        return NextResponse.json({message:error}, {status:500})      
     }
 }
